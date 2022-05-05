@@ -1,0 +1,38 @@
+//edited by arno 28 mar 2022...
+// Topo: torus, k,n=8,2.routing_function,DOR
+
+
+// Topology
+topology = torus;
+k = 8;
+n = 2;
+
+// Routing
+routing_function = min_adapt;
+
+// Router architecture
+vc_allocator = islip;
+sw_allocator = islip;
+alloc_iters = 1;
+credit_delay = 2;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+input_speedup = 2;
+output_speedup = 1;
+internal_speedup = 1.0;
+
+
+// Flow control
+num_vcs = 8;
+vc_buf_size = 8;
+wait_for_tail_credit = 1;
+
+// Traffic
+traffic = uniform;
+injection_rate = 0.01;
+
+
+//Simulation
+routing_delay=3;
+packet_size=20;
+latency_thres = 100000.0;

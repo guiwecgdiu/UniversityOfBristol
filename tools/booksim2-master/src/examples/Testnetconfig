@@ -1,0 +1,49 @@
+
+// Total number of VCs must match the above assignments
+num_vcs     = 3;
+
+vc_buf_size = 256;
+
+wait_for_tail_credit = 0;
+
+//
+// Router architecture
+//
+vc_allocator = islip; 
+sw_allocator = islip;
+alloc_iters  = 4;
+
+credit_delay   = 2;
+routing_delay  = 0;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+st_final_delay = 1;
+
+input_speedup     = 1;
+output_speedup    = 1;
+internal_speedup  = 1.7;
+
+warmup_periods = 3;
+sim_count          = 1;
+
+sample_period  = 100;  
+
+priority = none;
+traffic = uniform;
+
+injection_rate = 0.08;
+packet_size = 20;
+latency_thres = 100000.0;
+
+//flags for printing and tracking output
+
+//viewer_trace = 1;
+//print_activity = 1;
+
+
+//topology
+topology = testnet;
+routing_function = min;
+
+//a  = 8;
+//p  = 4;
